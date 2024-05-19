@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>À propos</title>
+</head>
+<body>
+    <div class="container">
+        <h1>À propos de notre projet</h1>
+        <p>Notre projet vise à...</p>
+        <div class="image-container">
+            <img src="/img1.jpeg" alt="Description de l'image">
+        </div>
+        <div class="button-container">
+            <a href="#" class="button">En savoir plus</a>
+            <a href="#" class="button">Nous contacter</a>
+        </div>
+        <div id="students-data-container"></div>
+    </div>
+
+    <script>
+        fetch('/students-data')
+          .then(response => response.json())
+          .then(data => {
+            const studentsDataContainer = document.getElementById('students-data-container');
+            studentsDataContainer.innerHTML = '<h2>Données des étudiants</h2>';
+            data.forEach(student => {
+              studentsDataContainer.innerHTML += `<p>Nom: ${student.lastname}, Prénom: ${student.firstname}, Numéro d'étudiant: ${student.students_number}</p>`;
+            });
+          })
+          .catch(error => console.error('Une erreur s\'est produite lors de la récupération des données de la base de données:', error));
+    </script>
+</body>
+</html>
