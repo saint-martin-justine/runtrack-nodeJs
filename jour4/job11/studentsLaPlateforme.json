@@ -1,0 +1,16 @@
+[
+  {
+    "_id": "664614e13b3ab004abf2413e",
+    "lastname": "LeBricoleur",
+    "firstname": "Bob",
+    "students_number": 123,
+    "year_id": null
+  },
+  {
+    "_id": "664614e13b3ab004abf24140",
+    "lastname": "Dupont",
+    "firstname": "Marine",
+    "students_number": 789,
+    "year_id": null
+  }
+]
